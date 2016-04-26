@@ -7,7 +7,7 @@ class ViewingListTest < ActionDispatch::IntegrationTest
     assert_equal root_path, page.current_page
 
     assert page.has_button?("Add item")
-    page.fill("Wash car")
+    page.fill_in :with => "Wash car"
 
     button.click("Add item")
     assert page.has_content("Wash car")
