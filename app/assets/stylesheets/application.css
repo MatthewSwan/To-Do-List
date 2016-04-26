@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.background {
+  background: url(http://thumbs.dreamstime.com/x/rain-drops-window-sunset-background-2-212199.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
