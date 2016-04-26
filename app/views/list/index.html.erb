@@ -1,8 +1,10 @@
 <h1> Welcome to Aarons List </h1>
 <% @list.each do |x|  %>
-  <div>  <li> <%= x.item %> </li> </div>
-
+  <div>
+    <input type="checkbox"><%= x.item %>
+</div>
 <% end %>
+
 <p></p>
 <%= form_tag("/list", method: "post") do %>
   <%= label_tag(:item, "enter a new list item") %>
