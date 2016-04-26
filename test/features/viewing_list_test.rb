@@ -1,13 +1,15 @@
 require 'test_helper'
 
-class ViewingList < ActionDispatch::IntegrationTest
+class ViewingListTest < ActionDispatch::IntegrationTest
 
-  page.visit list_path
-  assert_equal root_path, page.current_page
+  def test_view_items_that_need_to_be_done
+    page.visit list_path
+    assert_equal root_path, page.current_page
 
-  assert page.has_button?("Add item")
-  page.fill("Wash car")
+    assert page.has_button?("Add item")
+    page.fill("Wash car")
 
-  button.click("Add item")
-  assert page.has_content("Wash car")
+    button.click("Add item")
+    assert page.has_content("Wash car")
+  end
 end
