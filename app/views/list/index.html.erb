@@ -1,4 +1,11 @@
-
+<h1> Welcome to Aarons List </h1>
 <% @list.each do |x|  %>
-  <div> <%= x.item %> </div>
+  <div>  <li> <%= x.item %> </li> </div>
+
+<% end %>
+<p></p>
+<%= form_tag("/list", method: "post") do %>
+  <%= label_tag(:item, "enter a new list item") %>
+  <%= text_field_tag(:item) %>
+  <%= submit_tag("Submit") %>
 <% end %>
