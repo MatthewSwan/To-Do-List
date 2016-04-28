@@ -1,7 +1,7 @@
 <h1> Welcome to Aarons List </h1>
-<% @list.each do |x|  %>
+<% @list.each do |item|  %>
   <div>
-    <input type="checkbox"><%= x.item %>
+    <%= link_to item.item, list_path(item) %>
 </div>
 <% end %>
 

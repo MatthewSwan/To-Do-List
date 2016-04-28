@@ -1,0 +1,15 @@
+<h1>Edit yo to-do items!</h1>
+
+<%# <p></p> %>
+<%# <%= form_tag("/list/id", method: "patch") do %1> %>
+  <%# <%= label_tag(:item, "edit your list item") %1> %>
+  <%# <%= text_field_tag(:item) %1> %>
+  <%# <%= submit_tag("Submit") %1> %>
+<%# <% end %1> %>
+
+
+<%= form_for(@list) do |p| %>
+  <%= p.label :item %>
+  <%= p.text_field :item %>
+  <%= p.submit %>
+<% end %>
