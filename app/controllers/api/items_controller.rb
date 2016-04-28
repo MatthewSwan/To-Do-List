@@ -7,26 +7,26 @@ class Api::ItemsController < ApplicationController
   end
 
   def show
-    render json: @item
+    render json: @list
   end
 
   def update
-    @item.update(item_params)
+    @list.update(item_params)
 
-    if @item.save
-      render json: @item
+    if @list.save
+      render json: @list
     else
-      render json: @item.errors, status: :unprocessable_entity
+      render json: @list.errors, status: :unprocessable_entity
     end
   end
 
   def create
-    @item = Item.new(item_params)
+    @list = List.new(item_params)
 
-    if @item.save
-      render json: @item
+    if @list.save
+      render json: @list
     else
-      render json: @item.errors, status: :unprocessable_entity
+      render json: @list.errors, status: :unprocessable_entity
     end
   end
 
@@ -39,6 +39,6 @@ class Api::ItemsController < ApplicationController
   end
 
   def assign_item
-    @item = current_user.items.find(params[:id])
+    @list = List.find(params[:id])
   end
 end
