@@ -1,4 +1,6 @@
 <h1> Welcome to Aarons List </h1>
+<vue-items></vue-items>
+<%= render partial: "vue_templates/items" %>
 <% @list.each do |item|  %>
   <div>
     <%= link_to item.item, list_path(item) %>
