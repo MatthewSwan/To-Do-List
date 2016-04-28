@@ -1,10 +1,9 @@
 class Api::ItemsController < ApplicationController
 
-  before_action :authorize_api
   before_action :assign_item, only: [:show, :update]
 
   def index
-    render json: current_user.items
+    render json: List.all
   end
 
   def show
@@ -32,12 +31,6 @@ class Api::ItemsController < ApplicationController
   end
 
   private
-
-  def authorize_api
-    return if signed_in?
-
-    render json: { message: "Not authorized" }, status: :unauthorized
-  end
 
   def item_params
     result = params.require(:item).permit(:body, :date)
