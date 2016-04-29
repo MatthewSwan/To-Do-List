@@ -7,8 +7,8 @@ class MakingListTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Add item")
     fill_in('item_body', :with => 'wash car')
     page.click_button('Add item')
-    fill_in('item_body'), :with => 'feed dog')
-    fill_in('item_body'), :with => 'hem pants')
+    fill_in('item_body', :with => 'feed dog')
+    fill_in('item_body', :with => 'hem pants')
     assert page.has_content?('hem pants')
 
     assert page.has_button?('finished!')
