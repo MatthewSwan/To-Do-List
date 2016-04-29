@@ -14,7 +14,26 @@
  *= require_self
  */
 
-.background {
-  background: url(http://thumbs.dreamstime.com/x/rain-drops-window-sunset-background-2-212199.jpg) no-repeat center center fixed;
-  background-size: cover;
+.my-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.my-img h1 {
+  padding: 150px;
+  position: relative;
+  z-index: 2;
+}
+
+.my-img img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+}
+
+.text {
+  color: green;
 }

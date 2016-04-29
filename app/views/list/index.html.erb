@@ -1,15 +1,24 @@
-<h1> Welcome to Aarons List </h1>
-<vue-items></vue-items>
-<%= render partial: "vue_templates/items" %>
-<% @list.each do |item|  %>
-  <div>
-    <%= link_to item.item, list_path(item) %>
-</div>
-<% end %>
+<div class="my-img">
+  <img src="https://s-media-cache-ak0.pinimg.com/236x/31/ce/75/31ce75df64975d5e30379497b98d4fd3.jpg">
+  <h1> Welcome to Aarons List </h1>
+  <vue-items></vue-items>
+  <%= render partial: "vue_templates/items" %>
 
-<p></p>
-<%= form_tag("/list", method: "post") do %>
-  <%= label_tag(:item, "enter a new list item") %>
-  <%= text_field_tag(:item) %>
-  <%= submit_tag("Submit") %>
-<% end %>
+  <p></p>
+  <%= form_tag("/list", method: "post") do %>
+    <%= label_tag(:heading, "enter a list") %>
+    <%= text_field_tag(:heading) %>
+    <p></p>
+    <%= label_tag(:item, "enter a new list item") %>
+    <%= text_field_tag(:item) %>
+    <%= submit_tag("Submit") %>
+  <% end %>
+
+<br><br><br><br><br>
+
+  <% @list.each do |item| %>
+    <div>
+      <%= link_to item.item, list_path(item) %>
+    </div>
+  <% end %>
+</div>
