@@ -1,8 +1,12 @@
 <h1> Welcome to Aarons List </h1>
-<% @list.each do |x|  %>
-  <div>  <li> <%= x.item %> </li> </div>
-
+<vue-items></vue-items>
+<%= render partial: "vue_templates/items" %>
+<% @list.each do |item|  %>
+  <div>
+    <%= link_to item.item, list_path(item) %>
+</div>
 <% end %>
+
 <p></p>
 <%= form_tag("/list", method: "post") do %>
   <%= label_tag(:item, "enter a new list item") %>

@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
-List.create(item: "this is a test")
-List.create(item: "this is a test2")
-List.create(item: "this is a test3")
-List.create(item: "this is a test4")
+List.create(item: "shitty hat")
+List.create(item: "miserable accent")
+List.create(item: "even better comb over")
