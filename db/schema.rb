@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160429175840) do
 
-  create_table "associations", force: :cascade do |t|
-    t.integer "list_id"
-    t.integer "entry_id"
-  end
-
-  create_table "entries", force: :cascade do |t|
-    t.text "entry"
-  end
-
   create_table "lists", force: :cascade do |t|
     t.text "item"
   end
